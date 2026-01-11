@@ -387,8 +387,34 @@ const App = () => {
     }
   };
 
+  // Handle session_id from OAuth callback URL
   useEffect(() => {
-    checkAuthStatus();
+    const handleOAuthCallback = async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const sessionId = urlParams.get('session_id');
+
+      if (sessionId) {
+        try {
+          // Call the set-session endpoint to establish the cookie
+          await api.post(`/auth/set-session?session_id=${sessionId}`, {}, { withCredentials: true });
+
+          // Clean up the URL by removing the session_id parameter
+          const newUrl = window.location.pathname;
+          window.history.replaceState({}, document.title, newUrl);
+
+          // Now check auth status
+          checkAuthStatus();
+        } catch (error) {
+          console.error('Failed to set session:', error);
+          toast.error('Login failed. Please try again.');
+          checkAuthStatus();
+        }
+      } else {
+        checkAuthStatus();
+      }
+    };
+
+    handleOAuthCallback();
   }, [checkAuthStatus]);
 
   useEffect(() => {
