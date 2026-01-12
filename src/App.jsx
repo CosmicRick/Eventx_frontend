@@ -665,15 +665,15 @@ const App = () => {
                 </div>
                 <div className="input-row">
                   <FontAwesomeIcon icon={faCalendarCheck} /><span>StartEvent:</span>
-                  <input className="startDate" name="startDate" type="date"  />
+                  <input className="startDate" name="startDate" type="date" />
                   <span>StartTime:</span>
                   <input className="startTime" name="startTime" type="time" />
                 </div>
                 <div className="input-row">
                   <FontAwesomeIcon icon={faCalendarCheck} /><span>End Event:</span>
-                  <input className="endDate" name="endDate" type="date"  />
+                  <input className="endDate" name="endDate" type="date" />
                   <span>End Time:</span> &nbsp;
-                   <input className="endTime" name="endTime" type="time" />
+                  <input className="endTime" name="endTime" type="time" />
                 </div>
                 <div className="input-row">
                   <FontAwesomeIcon icon={faFileLines} /><input name="description" type="text" placeholder="Description" />
