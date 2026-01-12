@@ -855,8 +855,8 @@ const App = () => {
                   <section className='TaskShow'>
                     <h2>Upcoming Task</h2>
                     <div className="card taskshow-card">
-                      <div id="tasks-container" className="upcoming-events-list" style={{ marginBottom: '8px', backgroundColor: 'transparent', border: 'none' }}></div>
-                    </div>
+                      <div id="tasks-container" className="upcoming-events-list" style={{ marginBottom: '8px', backgroundColor: 'transparent', border: 'none', outline: 'none', boxShadow: 'none' }}></div>
+                    </div>  
                   </section>
                 </div>
               </div>

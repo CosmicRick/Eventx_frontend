@@ -372,31 +372,32 @@ html {
   padding: 10px 14px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0);
   color: #2d2d2d;
   font-size: 17px;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
+  border-bottom: 1px solid black;
 }
 .upcoming-search:focus {
-  border-color: #e96a02;
-  box-shadow: 0 0 0 2px rgba(233, 106, 2, 0.15);
+  border-color: #feb579;
+  box-shadow: 0 0 0 2px rgba(254, 192, 76, 0.15);
 }
 .upcoming-search::placeholder {
   color: rgba(45, 45, 45, 0.5);
 }
 .upcoming-sort-toggle {
-  background: #ea712f;
+  background: #f2a57c;
   color: #2d2d2d;
-  padding: 6px 16px;
-  border-radius: 20px;
+  padding: 10px 16px;
+  border-radius: 10px;
   margin: 0;
   outline: none;
   border: none;
   flex: 0 0 auto;
 }
 .upcoming-sort-toggle:hover {
-  background: #eba640;
+  background: #ffc061;
   color: #1a1a1a;
   outline: none;
 }
@@ -415,6 +416,70 @@ html {
   margin-top: 0;
   outline: none;
   white-space: wrap;
+}
+/* Upcoming Event Card with PNG3 */
+.upcoming-event-card {
+  position: relative;
+  overflow: hidden;
+}
+.upcoming-event-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  background-image: url("./assets/3.png");
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+}
+.upcoming-event-card > * {
+  position: relative;
+  z-index: 1;
+}
+.notes-card input[type="text"] {
+  background-color: transparent;
+  width: 100%;
+  height: 3rem;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+.notes-card input[type="text"]::placeholder {
+  color: #89773c;
+  font-weight: bold;
+}
+.notes-card .input-row {
+  width: 70%;
+  border-bottom: 1px solid rgba(71, 71, 71, 0.659);
+  margin-bottom: 10px;
+}
+/* AI Response Card with PNG4 */
+.note-card {
+  position: relative;
+  overflow: hidden;
+}
+.notes-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  background-image: url("./assets/4.png");
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+}
+.notes-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .taskshow-card {
@@ -469,24 +534,6 @@ html {
   aspect-ratio: 1;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 8px;
-}
-.notes-card input[type="text"] {
-  background-color: transparent;
-  width: 100%;
-  height: 3rem;
-  border: none;
-  outline: none;
-  font-size: 20px;
-  font-weight: bold;
-}
-.notes-card input[type="text"]::placeholder {
-  color: #89773c;
-  font-weight: bold;
-}
-.notes-card .input-row {
-  width: 70%;
-  border-bottom: 1px solid rgba(71, 71, 71, 0.659);
-  margin-bottom: 10px;
 }
 
 /* Notes */
