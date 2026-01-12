@@ -69,31 +69,62 @@ const App = () => {
 
         const label = document.createElement('span');
         label.style.marginRight = '8px';
+        label.style.flex = '1';
         label.textContent = title;
+        if (completed) {
+          label.style.textDecoration = 'line-through';
+          label.style.color = '#9ca3af';
+        }
 
         const actions = document.createElement('div');
         actions.style.marginLeft = 'auto';
         actions.style.display = 'flex';
         actions.style.gap = '8px';
+        actions.style.alignItems = 'center';
 
-        const checkbox = document.createElement('button');
-        checkbox.className = 'save-btn';
-        checkbox.textContent = completed ? 'Completed' : 'Task Done';
-        checkbox.title = completed ? 'Task already completed' : 'Mark task as done';
-        checkbox.disabled = !!completed;
-        checkbox.onclick = async () => {
-          try {
-            await api.put(`/tasks/${id}/complete`, {}, { withCredentials: true });
-            checkbox.textContent = 'Completed';
-            checkbox.disabled = true;
-            toast.success('Task marked as completed.');
-            // Trigger Kanban sync
-            window.dispatchEvent(new CustomEvent('kanban-task-completed'));
-          } catch (error) {
-            const message = error.response?.data?.detail ?? error.message ?? 'Failed to mark task as done';
-            toast.error(message);
-          }
-        };
+        // Check/cross marker for completion status
+        const statusMarker = document.createElement('span');
+        statusMarker.style.fontSize = '1.2rem';
+        statusMarker.style.cursor = completed ? 'default' : 'pointer';
+        statusMarker.style.transition = 'transform 0.2s ease';
+        if (completed) {
+          statusMarker.textContent = '✗';
+          statusMarker.style.color = '#ef4444';
+          statusMarker.title = 'Task completed';
+        } else {
+          statusMarker.textContent = '○';
+          statusMarker.style.color = '#6b7280';
+          statusMarker.title = 'Mark as done';
+          statusMarker.onmouseenter = () => {
+            statusMarker.textContent = '✓';
+            statusMarker.style.color = '#22c55e';
+            statusMarker.style.transform = 'scale(1.1)';
+          };
+          statusMarker.onmouseleave = () => {
+            statusMarker.textContent = '○';
+            statusMarker.style.color = '#6b7280';
+            statusMarker.style.transform = 'scale(1)';
+          };
+          statusMarker.onclick = async () => {
+            try {
+              await api.put(`/tasks/${id}/complete`, {}, { withCredentials: true });
+              statusMarker.textContent = '✗';
+              statusMarker.style.color = '#ef4444';
+              statusMarker.style.cursor = 'default';
+              statusMarker.title = 'Task completed';
+              statusMarker.onmouseenter = null;
+              statusMarker.onmouseleave = null;
+              statusMarker.onclick = null;
+              label.style.textDecoration = 'line-through';
+              label.style.color = '#9ca3af';
+              toast.success('Task marked as completed.');
+              window.dispatchEvent(new CustomEvent('kanban-task-completed'));
+            } catch (error) {
+              const message = error.response?.data?.detail ?? error.message ?? 'Failed to mark task as done';
+              toast.error(message);
+            }
+          };
+        }
 
         const del = document.createElement('button');
         del.className = 'save-btn';
@@ -112,7 +143,7 @@ const App = () => {
           }
         };
 
-        actions.appendChild(checkbox);
+        actions.appendChild(statusMarker);
         actions.appendChild(del);
 
         row.appendChild(label);
