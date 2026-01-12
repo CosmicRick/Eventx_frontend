@@ -476,6 +476,7 @@ textarea {
   color: #374151;
   line-height: 1.7;
   font-weight: 400;
+  text-align: left;
 }
 
 .ai-subsection {
@@ -486,6 +487,7 @@ textarea {
   padding: 8px 12px;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 8px;
+  text-align: left;
 }
 
 .ai-label {
@@ -521,6 +523,7 @@ textarea {
   border-radius: 8px;
   border-left: 3px solid #8b5cf6;
   transition: all 0.2s ease;
+  text-align: left;
 }
 
 .ai-list-item:hover {
@@ -540,6 +543,8 @@ textarea {
 .ai-text {
   line-height: 1.7;
   color: #374151;
+  text-align: left;
+  display: block;
 }
 
 .ai-text strong {
@@ -565,7 +570,7 @@ textarea {
   color: #9ca3af;
   font-style: italic;
   padding: 12px;
-  text-align: center;
+  text-align: left;
 }
 
 /* Footer */
