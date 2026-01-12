@@ -245,14 +245,21 @@ html {
   font-weight: bold;
   color: #fffbfb;
 }
+.create-event-card .input-row {
+  color: white;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
 
 .create-event-card span {
   padding-left: 1%;
+  color: white;
 }
 
 .create-event-card input[type="date"],
 .create-event-card input[type="time"] {
-  width: clamp(9rem, 22%, 13rem);
+  width: clamp(8.5rem, 21%, 12.5rem);
+  color: #fffbfb;
 }
 .startDate::-webkit-calendar-picker-indicator {
   filter: invert(1);
@@ -605,7 +612,7 @@ textarea {
 .footer {
   background: #333;
   color: #d9c4a9;
-  padding: 30px;
+  padding: 18px 10px;
 }
 .socials a {
   color: #d9c4a9;
@@ -614,7 +621,7 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 19px;
+  font-size: 16px;
 }
 .Services {
   margin-left: 30%;
@@ -717,8 +724,10 @@ textarea {
   }
   .footer-content {
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     text-align: center;
+    font-size: 14px;
+    padding: 8px 0;
   }
   .Services {
     margin-left: 0;
@@ -737,6 +746,14 @@ textarea {
 }
 
 @media (max-width: 480px) {
+  .footer {
+    padding: 10px 4px;
+  }
+  .footer-content {
+    font-size: 12px;
+    gap: 6px;
+    padding: 4px 0;
+  }
   .navbar {
     padding: 0.75rem 1rem;
   }
