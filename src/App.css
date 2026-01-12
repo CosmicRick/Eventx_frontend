@@ -242,9 +242,6 @@ html {
   font-size: 18px;
   outline: none;
 }
-.create-event-card input::placeholder{
-  color: #ffffff;
-}
 
 .create-event-card span {
   padding-left: 1%;
