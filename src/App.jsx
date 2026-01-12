@@ -9,6 +9,13 @@ import { faEnvelopeOpen, faCalendar, faFileLines, faCalendarCheck, faCalendarXma
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import api from './api';
+import image1 from './assets/1 (1).png';
+import image2 from './assets/2.png';
+import image3 from './assets/3.png';
+import image4 from './assets/4.png';
+import image5 from './assets/5.png';
+import image6 from './assets/6.png';
+import image7 from './assets/7.png';
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userEmail, setUserEmail] = useState('');
@@ -614,6 +621,12 @@ const App = () => {
               <h2>Create Event</h2>
               <form
                 className="card create-event-card"
+                style={{
+                  backgroundImage: `url(${image1})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
                 onSubmit={async (e) => {
                   e.preventDefault();
                   const form = e.currentTarget;
