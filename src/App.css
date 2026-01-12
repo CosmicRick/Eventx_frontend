@@ -19,11 +19,11 @@ html {
 /* Navbar */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: center;
   padding: 1.25rem 2.5rem;
   width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.918);
 }
 .nav-links a {
   margin-right: 20px;
@@ -375,7 +375,7 @@ html {
   white-space: wrap;
 }
 
-/* .upcoming-card {
+.upcoming-card {
   min-height: 25rem;
   width: 100%;
   max-width: 32rem;
@@ -388,7 +388,7 @@ html {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   flex-direction: column;
   color: #4a4a49;
-} */
+}
 
 .upcoming-card button {
   margin-top: 3rem;
