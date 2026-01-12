@@ -228,6 +228,15 @@ html {
 .create-event-card input[type="date"],
 .create-event-card input[type="time"] {
   width: clamp(8rem, 20%, 10rem);
+  color: transparent;
+}
+input[type="date"]:focus,
+input[type="date"]:valid {
+  color: #000;
+}
+input[type="time"]:focus,
+input[type="time"]:valid {
+  color: #000;
 }
 .startDate::-webkit-calendar-picker-indicator {
   filter: invert(1);
@@ -241,11 +250,7 @@ html {
 .endTime::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
-::-webkit-datetime-edit-year-field:not([aria-valuenow]),
-::-webkit-datetime-edit-month-field:not([aria-valuenow]),
-::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
-  color: transparent;
-}
+
 .create-event-card span {
   font-size: 20px;
   color: #3c3939;
