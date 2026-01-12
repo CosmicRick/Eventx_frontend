@@ -419,6 +419,7 @@ html {
   outline: none;
   white-space: wrap;
 }
+
 .notes-card input[type="text"] {
   background-color: transparent;
   width: 100%;
@@ -479,7 +480,7 @@ html {
   bottom: 0;
   width: 100%;
   height: 60%; /* Only 60% of the card height from the bottom */
-  background-image: url("./assets/2.png");
+  /* background-image: url("./assets/2.png"); */
   background-size: contain;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -502,6 +503,9 @@ html {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   flex-direction: column;
   color: #4a4a49;
+}
+.taskshow button{
+  padding: 1%;
 }
 ::-webkit-scrollbar {
   display: none;
