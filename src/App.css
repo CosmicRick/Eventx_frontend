@@ -10,7 +10,7 @@ html {
 }
 .dashboard-container {
   background: radial-gradient(circle at top, #f6c57b 0%, transparent 60%),
-    linear-gradient(180deg, #efb867 0%, #e3a957 45%, #cc8f3e 100%);
+  linear-gradient(180deg, #efb867 0%, #e3a957 45%, #cc8f3e 100%);
   min-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
@@ -197,7 +197,7 @@ html {
   font-size: 24px;
 }
 .card {
-  background-color: #e0b378b7;
+  background-color: #d9c4a9d0;
   backdrop-filter: blur(6px); /* Card color from design */
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -304,7 +304,7 @@ html {
   background: rgb(0, 0, 0);
   color: white;
   border: none;
-  padding: 20px 20px;
+  padding: 10px 20px;
   margin-right: auto;
   margin-left: auto;
   border-radius: 20px;
