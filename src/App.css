@@ -249,11 +249,6 @@ html {
 
 .create-event-card input[type="date"],
 .create-event-card input[type="time"] {
-  width: clamp(8rem, 20%, 10rem);
-  visibility: hidden;
-}
-.create-event-card input[type="date"],
-.create-event-card input[type="time"]:focus {
   width: clamp(6rem, 18%, 8rem);
 }
 .startDate::-webkit-calendar-picker-indicator {
