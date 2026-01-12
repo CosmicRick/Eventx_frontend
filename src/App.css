@@ -10,7 +10,7 @@ html {
 }
 .dashboard-container {
   background: radial-gradient(circle at top, #f6c57b 0%, transparent 60%),
-  linear-gradient(180deg, #efb867 0%, #e3a957 45%, #cc8f3e 100%);
+    linear-gradient(180deg, #efb867 0%, #e3a957 45%, #cc8f3e 100%);
   min-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
@@ -236,7 +236,7 @@ html {
 }
 .create-event-card input {
   background-color: transparent;
-  color: #969090;
+  color: #d4d2d2;
   width: 100%;
   height: 90%;
   border: none;
@@ -248,21 +248,21 @@ html {
   font-style: normal;
 }
 .create-event-card .input-row {
-  color: #969090;
+  color:  #d4d2d2;
 }
 
 .create-event-card .input-row span {
   padding-left: 1%;
-  color: #969090;
+  color: #d4d2d2;
 }
 
 .create-event-card input[type="date"] {
   width: clamp(8.5rem, 21%, 12.5rem);
-  color: #969090;
+  color: #d4d2d2;
 }
 .create-event-card input[type="time"] {
   width: clamp(6.5rem, 15%, 9.5rem);
-  color: #969090;
+  color: #d4d2d2;
 }
 .startDate::-webkit-calendar-picker-indicator {
   filter: invert(1);
@@ -279,11 +279,11 @@ html {
 
 .create-event-card span {
   font-size: 20px;
-  color: #969090;
+  color:#d4d2d2;
   margin-bottom: 5px;
 }
 .create-event-card input::placeholder {
-  color: #969090;
+  color: #d4d2d2;;
 }
 
 .input-row {
@@ -328,7 +328,7 @@ html {
   max-height: min(65vh, 32rem);
   overflow-y: auto;
   font-weight: bold;
-  color: gray;
+  color: #d4d2d2;
   font-family: "Squada One", sans-serif;
   font-weight: 600;
   scrollbar-width: none; /* Firefox */
@@ -413,7 +413,33 @@ html {
   white-space: wrap;
 }
 
-.upcoming-card {
+
+.taskshow-card {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Domine", serif;
+  position: relative;
+  overflow: hidden; */
+}
+.taskshow-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60%; /* Only 60% of the card height from the bottom */
+  background-image: url("./assets/2.png");
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.taskshow-card > * {
+  position: relative;
+  z-index: 1;
   min-height: 25rem;
   width: 100%;
   max-width: 32rem;
