@@ -362,6 +362,18 @@ html {
   margin: 0;
   width: auto;
 }
+.upcoming-events-list button {
+  width: max-content;
+  border-radius: 20px;
+  background-color: rgba(243, 175, 67, 0.947);
+  border: 1px solid gray;
+  color: #3c3939;
+  float: right;
+  margin-left: 0 !important;
+  margin-top: 0;
+  outline: none;
+  white-space: wrap;
+}
 
 
 .upcoming-card {
