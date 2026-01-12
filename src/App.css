@@ -212,7 +212,6 @@ html {
   font-family: "Domine", serif;
   position: relative;
   overflow: hidden;
-  /* Remove background-image and opacity from here */
 }
 
 .create-event-card::before {
@@ -226,7 +225,7 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.34;
+  opacity: 0.24;
   z-index: 0;
 }
 
