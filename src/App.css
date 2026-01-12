@@ -226,7 +226,7 @@ html {
 
 .create-event-card input[type="date"],
 .create-event-card input[type="time"] {
-  width: clamp(8rem, 20%, 12rem);
+  width: clamp(8rem, 22%, 12rem);
 }
 .startDate::-webkit-calendar-picker-indicator {
   filter: invert(1);
