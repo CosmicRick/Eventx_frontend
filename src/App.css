@@ -209,7 +209,6 @@ html {
   flex-direction: column;
   justify-content: space-between;
   font-family: "Domine", serif;
-  width: 60%;
 }
 .create-event-card input {
   background-color: transparent;
