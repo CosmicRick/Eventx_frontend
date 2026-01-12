@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { GripVertical, Plus, X, RefreshCw, LogIn, CheckCircle, Circle, Calendar, ListTodo } from 'lucide-react';
+import { GripVertical, Plus, X, LogIn, CheckCircle, Circle, Calendar, ListTodo } from 'lucide-react';
 import api from './api';
 import './kanbanbord.css';
 
@@ -54,7 +54,6 @@ const KanbanBoard = ({ isAuthenticated: propIsAuthenticated }) => {
   const [syncing, setSyncing] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(propIsAuthenticated ?? false);
   const [error, setError] = useState(null);
-  const [lastSyncTime, setLastSyncTime] = useState(() => loadFromStorage(STORAGE_KEYS.LAST_SYNC, null));
 
   // Save columns to localStorage whenever they change
   useEffect(() => {
@@ -180,11 +179,6 @@ const KanbanBoard = ({ isAuthenticated: propIsAuthenticated }) => {
       setColumns(newColumns);
       saveToStorage(STORAGE_KEYS.COLUMNS, newColumns);
 
-      // Update last sync time
-      const syncTime = new Date().toISOString();
-      setLastSyncTime(syncTime);
-      saveToStorage(STORAGE_KEYS.LAST_SYNC, syncTime);
-
     } catch (err) {
       console.error("Error fetching tasks:", err);
       if (err.response?.status === 401) {
@@ -226,18 +220,31 @@ const KanbanBoard = ({ isAuthenticated: propIsAuthenticated }) => {
     return () => clearInterval(interval);
   }, [isAuthenticated, fetchTasks]);
 
-  // Listen for events from other components
+  // Listen for events from other components (tasks and calendar)
   useEffect(() => {
     const handleSync = () => fetchTasks();
 
+    // Task events
     window.addEventListener('kanban-task-added', handleSync);
     window.addEventListener('kanban-task-completed', handleSync);
     window.addEventListener('kanban-task-deleted', handleSync);
+
+    // Calendar events
+    window.addEventListener('kanban-event-added', handleSync);
+    window.addEventListener('kanban-event-deleted', handleSync);
+    window.addEventListener('calendar-event-added', handleSync);
+    window.addEventListener('calendar-event-updated', handleSync);
+    window.addEventListener('calendar-event-deleted', handleSync);
 
     return () => {
       window.removeEventListener('kanban-task-added', handleSync);
       window.removeEventListener('kanban-task-completed', handleSync);
       window.removeEventListener('kanban-task-deleted', handleSync);
+      window.removeEventListener('kanban-event-added', handleSync);
+      window.removeEventListener('kanban-event-deleted', handleSync);
+      window.removeEventListener('calendar-event-added', handleSync);
+      window.removeEventListener('calendar-event-updated', handleSync);
+      window.removeEventListener('calendar-event-deleted', handleSync);
     };
   }, [fetchTasks]);
 
@@ -259,10 +266,6 @@ const KanbanBoard = ({ isAuthenticated: propIsAuthenticated }) => {
       // Keep cached data, just stop loading
       setLoading(false);
     }
-  };
-
-  const handleRefresh = async () => {
-    await fetchTasks();
   };
 
   const onDragStart = (e, item, columnId) => {
@@ -532,13 +535,6 @@ const KanbanBoard = ({ isAuthenticated: propIsAuthenticated }) => {
     );
   }
 
-  // Format last sync time
-  const formatLastSync = () => {
-    if (!lastSyncTime) return null;
-    const date = new Date(lastSyncTime);
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  };
-
   // Helper to format event date/time
   const formatEventTime = (item) => {
     if (item.type !== 'event' || !item.eventDate) return null;
@@ -589,18 +585,7 @@ const KanbanBoard = ({ isAuthenticated: propIsAuthenticated }) => {
         <h1 className="kanban-title">📋 Tasks & Events Board</h1>
         <div className="kanban-header-actions">
           {error && <span className="error-message">{error}</span>}
-          {lastSyncTime && (
-            <span className="last-sync">Last sync: {formatLastSync()}</span>
-          )}
-          <button
-            onClick={handleRefresh}
-            className={`refresh-btn ${syncing ? 'syncing' : ''}`}
-            title="Sync with Google"
-            disabled={syncing || !isAuthenticated}
-          >
-            <RefreshCw size={18} className={syncing ? 'spinning' : ''} />
-            <span>{syncing ? 'Syncing...' : 'Sync'}</span>
-          </button>
+          {syncing && <span className="syncing-indicator">Syncing...</span>}
         </div>
       </div>
 

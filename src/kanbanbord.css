@@ -22,24 +22,25 @@
   padding-left: 15px;
 }
 
-.refresh-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #fff5eb;
-  border: none;
+/* Syncing indicator */
+.syncing-indicator {
   color: #e96a02;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  background: #fff5eb;
+  border-radius: 6px;
+  animation: pulse 1.5s infinite;
 }
 
-.refresh-btn:hover {
-  background: #e96a02;
-  color: white;
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 .kanban-columns-wrapper {
