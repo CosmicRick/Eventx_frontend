@@ -10,11 +10,12 @@ html {
 }
 .dashboard-container {
   background: linear-gradient(
-    120deg,
-    #fffdf7 0%,
-    #fbf3e6 35%,
-    #f0deb4 70%,
-    #dcc38a 100%
+    180deg,
+    #f0b96a 0%,
+    #edb56a 30%,
+    #e7ae63 55%,
+    #dca455 75%,
+    #c99345 100%
   );
   min-height: 100vh;
   width: 100vw;
