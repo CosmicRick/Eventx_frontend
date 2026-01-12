@@ -382,6 +382,9 @@ html {
 .upcoming-search:focus {
   border-color: #feb579;
   box-shadow: 0 0 0 2px rgba(254, 192, 76, 0.15);
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
 }
 .upcoming-search::placeholder {
   color: rgba(45, 45, 45, 0.5);
@@ -589,6 +592,10 @@ textarea {
   line-height: 1.7;
   font-weight: 400;
   text-align: left;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .ai-subsection {
