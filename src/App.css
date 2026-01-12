@@ -333,11 +333,13 @@ html {
   overflow-y: auto;
   font-weight: bold;
   color: #d4d2d2;
+  background-color: rgba(0, 0, 0, 0);
   font-family: "Squada One", sans-serif;
   font-weight: 600;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   margin-bottom: 2rem;
+  font-family: "Google Sans", sans-serif;
 }
 
 /* Hide scrollbar for upcoming events */
@@ -374,7 +376,7 @@ html {
   color: #2d2d2d;
   font-size: 17px;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  border: none;
   border-bottom: 1px solid black;
 }
 .upcoming-search:focus {
@@ -415,12 +417,7 @@ html {
   outline: none;
   white-space: wrap;
 }
-/* Upcoming Event Card with PNG3 */
-.upcoming-event-card {
-  position: relative;
-  overflow: hidden;
-}
-.upcoming-event-card::before {
+.upcoming-event-list::before {
   content: "";
   position: absolute;
   left: 0;
@@ -434,7 +431,7 @@ html {
   opacity: 0.2;
   z-index: 0;
 }
-.upcoming-event-card > * {
+.upcoming-events-list > * {
   position: relative;
   z-index: 1;
 }
@@ -455,6 +452,9 @@ html {
   width: 70%;
   border-bottom: 1px solid rgba(71, 71, 71, 0.659);
   margin-bottom: 10px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 /* AI Response Card with PNG4 */
 .note-card {
