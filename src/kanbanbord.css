@@ -438,3 +438,146 @@
   cursor: grabbing;
   opacity: 0.8;
 }
+/* Offline Banner */
+.offline-banner {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #92400e;
+}
+
+.login-link {
+  background: #f59e0b;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.login-link:hover {
+  background: #d97706;
+}
+
+/* Last sync time */
+.last-sync {
+  color: #718096;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 6px;
+}
+
+/* Event item styles */
+.kanban-item.event-item {
+  border-left: 3px solid #8b5cf6;
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+}
+
+.kanban-item.event-item:hover {
+  border-color: #7c3aed;
+}
+
+.event-icon {
+  color: #8b5cf6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.item-text p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #2d3748;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.event-time {
+  font-size: 0.75rem;
+  color: #8b5cf6;
+  font-weight: 500;
+}
+
+.local-badge {
+  font-size: 0.65rem;
+  background: #fef3c7;
+  color: #92400e;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  display: inline-block;
+  width: fit-content;
+}
+
+/* Item source indicator */
+.item-source {
+  display: flex;
+  align-items: center;
+  color: #a0aec0;
+}
+
+.item-source svg {
+  opacity: 0.6;
+}
+
+/* Completed event item */
+.kanban-item.completed.event-item {
+  background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+  border-left-color: #10b981;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .kanban-columns-wrapper {
+    flex-direction: column;
+  }
+
+  .kanban-column {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .kanban-board-container {
+    padding: 15px;
+  }
+
+  .kanban-title {
+    font-size: 1.4rem;
+  }
+
+  .kanban-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .kanban-header-actions {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .offline-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
