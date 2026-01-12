@@ -295,6 +295,7 @@ html {
   font-weight: 600;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
+  margin-bottom: 2rem;
 }
 
 /* Hide scrollbar for upcoming events */
@@ -374,7 +375,7 @@ html {
   white-space: wrap;
 }
 
-.upcoming-card {
+/* .upcoming-card {
   min-height: 25rem;
   width: 100%;
   max-width: 32rem;
@@ -387,7 +388,7 @@ html {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   flex-direction: column;
   color: #4a4a49;
-}
+} */
 
 .upcoming-card button {
   margin-top: 3rem;
@@ -511,11 +512,125 @@ textarea {
 @media (max-width: 768px) {
   .grid-layout {
     grid-template-columns: 1fr;
+    padding: 0 1rem 1.5rem;
+    gap: 1rem;
   }
   .full-width {
     grid-column: span 1;
   }
   .hero h1 {
     font-size: 32px;
+  }
+  .navbar {
+    padding: 1rem 1.25rem;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .nav-links a {
+    margin-right: 12px;
+    font-size: 0.75rem;
+  }
+  .logo {
+    font-size: 1.25rem;
+  }
+  .hero {
+    padding: 1.5rem 1.25rem;
+  }
+  .eventmanegament {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .taskshow {
+    min-width: 100%;
+  }
+  .upcoming-card {
+    max-width: 100%;
+    min-height: auto;
+    padding: 15px;
+  }
+  .upcoming-controls {
+    flex-wrap: wrap;
+  }
+  .upcoming-search {
+    flex: 1 1 100%;
+  }
+  .card {
+    padding: 15px;
+  }
+  .create-event-card input {
+    font-size: 16px;
+  }
+  .create-event-card span {
+    font-size: 16px;
+  }
+  .input-row {
+    margin-bottom: 1rem;
+  }
+  .create-event-card .add-email-btn {
+    margin-left: 0;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .Services {
+    margin-left: 0;
+  }
+  .socials {
+    margin-left: 0;
+  }
+  .contact-info ol ul {
+    padding-left: 0;
+    justify-content: center;
+  }
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+  .nav-links a {
+    margin-right: 8px;
+    font-size: 0.7rem;
+  }
+  .logo {
+    font-size: 1rem;
+  }
+  .Login {
+    width: 40px;
+    height: 40px;
+  }
+  .hero {
+    padding: 1rem;
+  }
+  .hero h1 {
+    font-size: 24px;
+  }
+  .grid-layout {
+    padding: 0 0.75rem 1rem;
+  }
+  .card {
+    padding: 12px;
+    border-radius: 14px;
+  }
+  .create-event-card input[type="date"],
+  .create-event-card input[type="time"] {
+    width: 100%;
+  }
+  .upcoming-card button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .profile-card {
+    min-width: 90%;
+    padding: 18px;
+  }
+  .save-btn {
+    padding: 8px 16px;
   }
 }
