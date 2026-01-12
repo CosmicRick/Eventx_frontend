@@ -235,12 +235,15 @@ html {
 }
 .create-event-card input {
   background-color: transparent;
-  color: #eddede;
+  color: #ffffff;
   width: 100%;
   height: 90%;
   border: none;
   font-size: 18px;
   outline: none;
+}
+.create-event-card input::placeholder{
+  color: #ffffff;
 }
 
 .create-event-card span {
@@ -250,6 +253,7 @@ html {
 .create-event-card input[type="date"],
 .create-event-card input[type="time"] {
   width: clamp(8rem, 20%, 10rem);
+  visibility: hidden;
 }
 .startDate::-webkit-calendar-picker-indicator {
   filter: invert(1);
