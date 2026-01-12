@@ -26,7 +26,7 @@ html {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .nav-links a {
-  margin-right: 20px;
+  margin-right: 10px;
   text-decoration: none;
   color: inherit;
   font-size: 0.875rem; /* 14px */
