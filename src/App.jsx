@@ -5,7 +5,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faSquareTwitter, faSquareLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faMap, faCity, faLocationArrow, faEnvelope, faArrowPointer } from '@fortawesome/free-solid-svg-icons';
-import { faEnvelopeOpen, faCalendar, faFileLines, faCalendarCheck, faCalendarXmark } from '@fortawesome/free-regular-svg-icons';
+import { faEnvelopeOpen, faCalendar, faFileLines, faCalendarCheck, faCalendarXmark, faSearch } from '@fortawesome/free-regular-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import api from './api';
@@ -810,13 +810,17 @@ const App = () => {
                         {!isLoadingEvents && !eventsError && (
                           <>
                             <div className="upcoming-controls">
-                              <input
-                                type="search"
-                                value={eventSearchQuery}
-                                onChange={(e) => setEventSearchQuery(e.target.value)}
-                                placeholder="Search events"
-                                className="upcoming-search"
-                              />
+                              <div style={{ position: 'relative', width: '100%' }}>
+                                <input
+                                  type="search"
+                                  value={eventSearchQuery}
+                                  onChange={(e) => setEventSearchQuery(e.target.value)}
+                                  placeholder="Search events"
+                                  className="upcoming-search"
+                                  style={{ paddingLeft: '2rem' }}
+                                />
+                                <FontAwesomeIcon icon={faSearch} style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)', color: '#aaa', pointerEvents: 'none' }} />
+                              </div>
                               <button
                                 type="button"
                                 className="save-btn upcoming-sort-toggle"
@@ -856,7 +860,7 @@ const App = () => {
                     <h2>Upcoming Task</h2>
                     <div className="card taskshow-card">
                       <div id="tasks-container" className="upcoming-events-list" style={{ marginBottom: '8px', backgroundColor: 'transparent', border: 'none', outline: 'none', boxShadow: 'none' }}></div>
-                    </div>  
+                    </div>
                   </section>
                 </div>
               </div>
