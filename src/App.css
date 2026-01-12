@@ -389,12 +389,6 @@ html {
   flex-direction: column;
   color: #4a4a49;
 }
-
-/* .upcoming-card button {
-  margin-top: 3rem;
-  margin-left: 45%;
-  font-size: medium;
-} */
 ::-webkit-scrollbar {
   display: none;
 }
