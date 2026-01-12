@@ -281,6 +281,10 @@ html {
   font-size: 20px;
   color: #000000;
   margin-bottom: 5px;
+  font-size: medium;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 .create-event-card input::placeholder {
   color: #000000;
@@ -412,7 +416,6 @@ html {
   outline: none;
   white-space: wrap;
 }
-
 
 .taskshow-card {
   display: flex;
