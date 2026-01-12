@@ -211,6 +211,7 @@ html {
   justify-content: space-between;
   font-family: "Domine", serif;
   background-image: url('./assets/1 (1).png');
+  opacity: 0.95;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
