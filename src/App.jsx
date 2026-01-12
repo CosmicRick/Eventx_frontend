@@ -536,7 +536,6 @@ const App = () => {
           <a href="#" onClick={(e) => { e.preventDefault(); setView('dashboard'); }}>Home</a>
           <a href="#" onClick={(e) => { e.preventDefault(); setView('kanban'); }}>Kanban Board</a>
           <a href="#">About Us</a>
-          <a href="#">Contact Us</a>
         </div>
         <div className="logo">EvenetX</div>
         <div className="authuserinfo">
