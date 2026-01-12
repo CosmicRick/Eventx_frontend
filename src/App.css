@@ -197,7 +197,7 @@ html {
   font-size: 24px;
 }
 .card {
-  background-color: #d9c4a9d0; /* Card color from design */
+  background-color: #efcb9d; /* Card color from design */
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -242,16 +242,17 @@ html {
   font-size: 18px;
   outline: none;
   font-size: medium;
-  font-weight: bold;
-  color: #fffbfb;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 .create-event-card .input-row {
   color: white;
   font-weight: bold;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(46, 45, 45, 0.743);
 }
 
-.create-event-card span {
+.create-event-card .input-row span {
   padding-left: 1%;
   color: white;
 }
