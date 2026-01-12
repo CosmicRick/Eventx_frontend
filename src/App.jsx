@@ -82,19 +82,12 @@ const App = () => {
         actions.style.gap = '8px';
         actions.style.alignItems = 'center';
 
-        // Task Done button or cross check marker
+        // Task Done button for incomplete, nothing for completed
         const taskDoneContainer = document.createElement('span');
         taskDoneContainer.style.display = 'flex';
         taskDoneContainer.style.alignItems = 'center';
 
-        if (completed) {
-          // Show cross check for completed tasks
-          taskDoneContainer.textContent = '✗';
-          taskDoneContainer.style.fontSize = '1.4rem';
-          taskDoneContainer.style.color = '#ef4444';
-          taskDoneContainer.style.fontWeight = 'bold';
-          taskDoneContainer.title = 'Task completed';
-        } else {
+        if (!completed) {
           // Show Task Done button
           const taskDoneBtn = document.createElement('button');
           taskDoneBtn.className = 'save-btn';
@@ -103,13 +96,8 @@ const App = () => {
           taskDoneBtn.onclick = async () => {
             try {
               await api.put(`/tasks/${id}/complete`, {}, { withCredentials: true });
-              // Replace button with cross check
+              // Remove button after marking as done
               taskDoneContainer.innerHTML = '';
-              taskDoneContainer.textContent = '✗';
-              taskDoneContainer.style.fontSize = '1.4rem';
-              taskDoneContainer.style.color = '#ef4444';
-              taskDoneContainer.style.fontWeight = 'bold';
-              taskDoneContainer.title = 'Task completed';
               label.style.textDecoration = 'line-through';
               label.style.color = '#9ca3af';
               toast.success('Task marked as completed.');
@@ -1051,4 +1039,4 @@ const App = () => {
   );
 };
 
-export default App; 
+export default App;
