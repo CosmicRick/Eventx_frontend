@@ -753,7 +753,7 @@ const App = () => {
                 </div>
                 <div className="input-row">
                   <FontAwesomeIcon icon={faCalendarCheck} /><span>End Event:</span>
-                  <input className="endDate" name="endDate" type="text" placeholder='hh/mm' onfocus="this.type='time'" onblur="this.type='text'"/>
+                  <input className="endDate" name="endDate" type="date" />
                   <span>End Time:</span>
                   <input className="endTime" name="endTime" type="time" />
                 </div>
