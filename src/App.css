@@ -236,7 +236,7 @@ html {
 }
 .create-event-card input {
   background-color: transparent;
-  color: #ffffff;
+  color: #969090;
   width: 100%;
   height: 90%;
   border: none;
@@ -248,21 +248,21 @@ html {
   font-style: normal;
 }
 .create-event-card .input-row {
-  color: white;
+  color: #969090;
 }
 
 .create-event-card .input-row span {
   padding-left: 1%;
-  color: white;
+  color: #969090;
 }
 
 .create-event-card input[type="date"] {
   width: clamp(8.5rem, 21%, 12.5rem);
-  color: #fffbfb;
+  color: #969090;
 }
 .create-event-card input[type="time"] {
   width: clamp(6.5rem, 15%, 9.5rem);
-  color: #fffbfb;
+  color: #969090;
 }
 .startDate::-webkit-calendar-picker-indicator {
   filter: invert(1);
@@ -279,11 +279,11 @@ html {
 
 .create-event-card span {
   font-size: 20px;
-  color: #3c3939;
+  color: #969090;
   margin-bottom: 5px;
 }
 .create-event-card input::placeholder {
-  color: #fffbfb;
+  color: #969090;
 }
 
 .input-row {

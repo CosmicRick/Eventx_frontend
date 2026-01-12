@@ -754,7 +754,7 @@ const App = () => {
                 <div className="input-row">
                   <FontAwesomeIcon icon={faCalendarCheck} /><span>End Event:</span>
                   <input className="endDate" name="endDate" type="date" />
-                  <span>EndTime:</span>
+                  <span>End Time:</span>
                   <input className="endTime" name="endTime" type="time" />
                 </div>
                 <div className="input-row">
