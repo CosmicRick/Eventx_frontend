@@ -364,10 +364,7 @@ html {
   width: auto;
 }
 .upcoming-events-list button {
-  width: .5rem;
-  height: .5rem;
-  font-size: small;
-  padding: 5px 10px;
+  width: max-content;
   border-radius: 20px;
   background-color: rgba(243, 175, 67, 0.947);
   border: 1px solid gray;
