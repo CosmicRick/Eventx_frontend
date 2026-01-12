@@ -887,8 +887,7 @@ const App = () => {
               </div>
             </section>
             <section className='kanbanbord full-width'>
-              <h2>Kanban Board</h2>
-              <div className="card kanban-card ">
+              <div className=" kanban-card ">
                 <KanbanBoard isAuthenticated={isAuthenticated} />
               </div>
             </section>
