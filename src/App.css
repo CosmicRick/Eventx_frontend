@@ -249,8 +249,8 @@ html {
   color: #3c3939;
 }
 .input-row {
-  min-height: 2rem; /* 40px */
-  margin-bottom: 1rem; /* 30px */
+  min-height: 2.5rem; /* 40px */
+  margin-bottom: 1.875rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -373,7 +373,6 @@ html {
   outline: none;
   white-space: wrap;
 }
-
 
 .upcoming-card {
   min-height: 25rem;
