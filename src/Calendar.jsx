@@ -184,7 +184,7 @@ export default function Calendar() {
                   <div style={{ fontWeight: 'bold', fontSize: '1rem' }}>{event.summary || '(No title)'}</div>
                   {event.start?.dateTime && (
                     <div style={{ fontSize: '0.85rem', color: '#555', marginTop: '4px' }}>
-                      {new Date(event.start.dateTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                      {new Date(event.start.dateTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true })}
                     </div>
                   )}
                   {event.start?.date && (
