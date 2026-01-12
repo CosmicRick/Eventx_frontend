@@ -9,17 +9,8 @@ html {
   font-size: clamp(14px, 0.9vw + 0.5rem, 16px);
 }
 .dashboard-container {
-    background: radial-gradient(
-      circle at top,
-      #f6c57b 0%,
-      transparent 60%
-    ),
-    linear-gradient(
-      180deg,
-      #efb867 0%,
-      #e3a957 45%,
-      #cc8f3e 100%
-    );
+  background: radial-gradient(circle at top, #f6c57b 0%, transparent 60%),
+    linear-gradient(180deg, #efb867 0%, #e3a957 45%, #cc8f3e 100%);
   min-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
@@ -249,6 +240,11 @@ html {
 }
 .endTime::-webkit-calendar-picker-indicator {
   filter: invert(1);
+}
+::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+  color: transparent;
 }
 .create-event-card span {
   font-size: 20px;
