@@ -46,9 +46,6 @@ const App = () => {
       if (!Array.isArray(tasks) || tasks.length === 0) {
         const empty = document.createElement('div');
         empty.className = 'input-row';
-        empty.style.marginBottom = '0.25rem';
-        empty.style.minHeight = 'auto';
-        empty.style.borderBottom = 'none';
         empty.textContent = 'No tasks found';
         container.appendChild(empty);
         return;
@@ -62,9 +59,6 @@ const App = () => {
         row.className = 'input-row';
         row.style.display = 'flex';
         row.style.alignItems = 'center';
-        row.style.marginBottom = '0.25rem';
-        row.style.minHeight = 'auto';
-        row.style.borderBottom = 'none';
 
         const label = document.createElement('span');
         label.style.marginRight = '8px';
