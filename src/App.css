@@ -210,6 +210,10 @@ html {
   flex-direction: column;
   justify-content: space-between;
   font-family: "Domine", serif;
+  background-image: url('./assets/1 (1).png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .create-event-card input {
   background-color: transparent;

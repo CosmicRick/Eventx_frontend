@@ -621,12 +621,6 @@ const App = () => {
               <h2>Create Event</h2>
               <form
                 className="card create-event-card"
-                style={{
-                  backgroundImage: `url(${image1})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat'
-                }}
                 onSubmit={async (e) => {
                   e.preventDefault();
                   const form = e.currentTarget;
