@@ -360,7 +360,7 @@ html {
 }
 .upcoming-controls .save-btn {
   margin: 0;
-  width: auto;
+  width: 0.23rem;
 }
 .upcoming-events-list button {
   width: max-content;
