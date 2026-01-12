@@ -556,7 +556,7 @@ const App = () => {
       <nav className="navbar">
         <div className="nav-links">
           <a href="#" onClick={(e) => { e.preventDefault(); setView('dashboard'); }}>Home</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); setView('kanban'); }}>Kanban Board</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setView('kanban'); }}>TaskBord</a>
           <a href="#">About Us</a>
         </div>
         <div className="logo">EvenetX</div>

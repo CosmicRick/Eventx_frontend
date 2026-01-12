@@ -381,7 +381,6 @@ html {
 }
 .upcoming-search:focus {
   border-color: #feb579;
-  box-shadow: 0 0 0 2px rgba(254, 192, 76, 0.15);
   outline: none;
   border: none;
   border-bottom: 1px solid black;
