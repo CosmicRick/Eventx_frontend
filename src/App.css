@@ -295,7 +295,6 @@ html {
   font-weight: 600;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
-  margin-bottom: 2rem;
 }
 
 /* Hide scrollbar for upcoming events */
@@ -303,14 +302,14 @@ html {
   display: none;
 }
 
-/* .upcoming-events-list .input-row {
+.upcoming-events-list .input-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   padding: 0.25rem 0.5rem 0 0.5rem;
   gap: 0.125rem;
-} */
+}
 
 .upcoming-events-list span {
   font-size: large;
