@@ -219,17 +219,14 @@ html {
   font-size: 18px;
   outline: none;
 }
+
 .create-event-card span {
   padding-left: 1%;
 }
 
-.create-event-card input[type="date"] {
-  margin-left: 1rem;
-  width: 10rem;
-}
+.create-event-card input[type="date"],
 .create-event-card input[type="time"] {
-  margin-left: 2rem;
-  width: 10rem;
+  width: clamp(8rem, 20%, 10rem);
 }
 .startDate::-webkit-calendar-picker-indicator {
   filter: invert(1);
@@ -381,7 +378,7 @@ html {
 .upcoming-card {
   min-height: 25rem;
   width: 100%;
-  max-width: 42rem;
+  max-width: 32rem;
   font-size: large;
   font-family: "Squada One", sans-serif;
   background-color: #d9c4a9d0;
