@@ -210,11 +210,29 @@ html {
   flex-direction: column;
   justify-content: space-between;
   font-family: "Domine", serif;
-  background-image: url('./assets/1 (1).png');
-  opacity: 0.34;
+  position: relative;
+  overflow: hidden;
+  /* Remove background-image and opacity from here */
+}
+
+.create-event-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/1 (1).png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0.34;
+  z-index: 0;
+}
+
+.create-event-card > * {
+  position: relative;
+  z-index: 1;
 }
 .create-event-card input {
   background-color: transparent;
