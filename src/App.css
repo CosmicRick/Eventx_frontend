@@ -440,12 +440,132 @@ textarea {
   flex-direction: column;
   gap: 12px;
   font-family: "Raleway", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .ai-response-card .placeholder-content {
   width: 100%;
   box-sizing: border-box;
+}
+
+/* AI Response Formatting Styles */
+.ai-section {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+  border-radius: 12px;
+  border-left: 4px solid #4f46e5;
+  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.08);
+}
+
+.ai-section-header {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3730a3;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(79, 70, 229, 0.15);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ai-section-content {
+  color: #374151;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.ai-subsection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 6px 0;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+}
+
+.ai-label {
+  font-weight: 600;
+  color: #4338ca;
+  min-width: 100px;
+}
+
+.ai-value {
+  color: #4b5563;
+  flex: 1;
+}
+
+.ai-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.ai-list.depth-0 {
+  padding-left: 0;
+}
+
+.ai-list.depth-1 {
+  padding-left: 16px;
+}
+
+.ai-list-item {
+  position: relative;
+  padding: 8px 12px 8px 28px;
+  margin: 6px 0;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  border-left: 3px solid #8b5cf6;
+  transition: all 0.2s ease;
+}
+
+.ai-list-item:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.12);
+  transform: translateX(4px);
+}
+
+.ai-list-item::before {
+  content: "▸";
+  position: absolute;
+  left: 10px;
+  color: #8b5cf6;
+  font-weight: bold;
+}
+
+.ai-text {
+  line-height: 1.7;
+  color: #374151;
+}
+
+.ai-text strong {
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.ai-text em {
+  color: #6366f1;
+  font-style: italic;
+}
+
+.ai-text code {
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 0.9em;
+}
+
+.ai-empty {
+  color: #9ca3af;
+  font-style: italic;
+  padding: 12px;
+  text-align: center;
 }
 
 /* Footer */

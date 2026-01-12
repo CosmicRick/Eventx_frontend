@@ -200,7 +200,17 @@ const KanbanBoard = ({ isAuthenticated: propIsAuthenticated }) => {
       if (propIsAuthenticated) {
         fetchTasks();
       } else {
-        // Keep cached data but stop loading
+        // Clear all data when logged out
+        const emptyColumns = {
+          todo: { title: 'To Do', items: [] },
+          inProgress: { title: 'In Progress', items: [] },
+          done: { title: 'Done', items: [] }
+        };
+        setColumns(emptyColumns);
+        // Clear localStorage
+        localStorage.removeItem(STORAGE_KEYS.COLUMNS);
+        localStorage.removeItem(STORAGE_KEYS.LAST_SYNC);
+        localStorage.removeItem(STORAGE_KEYS.LOCAL_TASKS);
         setLoading(false);
       }
     } else {
@@ -257,13 +267,31 @@ const KanbanBoard = ({ isAuthenticated: propIsAuthenticated }) => {
         await fetchTasks();
       } else {
         setIsAuthenticated(false);
-        // Keep cached data, just stop loading
+        // Clear all data when not authenticated
+        const emptyColumns = {
+          todo: { title: 'To Do', items: [] },
+          inProgress: { title: 'In Progress', items: [] },
+          done: { title: 'Done', items: [] }
+        };
+        setColumns(emptyColumns);
+        localStorage.removeItem(STORAGE_KEYS.COLUMNS);
+        localStorage.removeItem(STORAGE_KEYS.LAST_SYNC);
+        localStorage.removeItem(STORAGE_KEYS.LOCAL_TASKS);
         setLoading(false);
       }
     } catch (err) {
       console.error('Auth check failed:', err);
       setIsAuthenticated(false);
-      // Keep cached data, just stop loading
+      // Clear all data on auth error
+      const emptyColumns = {
+        todo: { title: 'To Do', items: [] },
+        inProgress: { title: 'In Progress', items: [] },
+        done: { title: 'Done', items: [] }
+      };
+      setColumns(emptyColumns);
+      localStorage.removeItem(STORAGE_KEYS.COLUMNS);
+      localStorage.removeItem(STORAGE_KEYS.LAST_SYNC);
+      localStorage.removeItem(STORAGE_KEYS.LOCAL_TASKS);
       setLoading(false);
     }
   };
@@ -551,36 +579,23 @@ const KanbanBoard = ({ isAuthenticated: propIsAuthenticated }) => {
   };
 
   if (!isAuthenticated) {
-    // Show cached data even when not authenticated
-    const hasCachedData = columns.todo.items.length > 0 ||
-      columns.inProgress.items.length > 0 ||
-      columns.done.items.length > 0;
-
-    if (!hasCachedData) {
-      return (
-        <div className="kanban-board-container">
-          <div className="login-prompt">
-            <LogIn size={48} className="login-icon" />
-            <h2>Please Login</h2>
-            <p>Connect your Google account to manage your tasks.</p>
-            <button onClick={handleLogin} className="login-btn-kanban">
-              Login with Google
-            </button>
-          </div>
+    // Clear all cached data when not authenticated
+    return (
+      <div className="kanban-board-container">
+        <div className="login-prompt">
+          <LogIn size={48} className="login-icon" />
+          <h2>Please Login</h2>
+          <p>Connect your Google account to manage your tasks.</p>
+          <button onClick={handleLogin} className="login-btn-kanban">
+            Login with Google
+          </button>
         </div>
-      );
-    }
-    // If there's cached data, continue to show the board with a login prompt banner
+      </div>
+    );
   }
 
   return (
     <div className="kanban-board-container">
-      {!isAuthenticated && (
-        <div className="offline-banner">
-          <span>📴 Viewing cached data. </span>
-          <button onClick={handleLogin} className="login-link">Login to sync</button>
-        </div>
-      )}
       <div className="kanban-header">
         <h1 className="kanban-title">📋 Tasks & Events Board</h1>
         <div className="kanban-header-actions">

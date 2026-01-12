@@ -209,22 +209,36 @@ const App = () => {
     return text.replace(/[\*#]/g, '').replace(/\s+\n/g, '\n').trim();
   };
 
-  const formatSummary = (value, depth = 0) => {
+  const formatSummary = (value, depth = 0, asHtml = true) => {
     if (value == null) {
-      return 'No insight available.';
+      return asHtml ? '<p class="ai-empty">No insight available.</p>' : 'No insight available.';
     }
     if (typeof value === 'string') {
-      return sanitizeSummaryText(value);
+      const sanitized = sanitizeSummaryText(value);
+      if (asHtml) {
+        // Convert markdown-style formatting to HTML
+        let html = sanitized
+          .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\*(.+?)\*/g, '<em>$1</em>')
+          .replace(/`(.+?)`/g, '<code>$1</code>')
+          .replace(/\n/g, '<br>');
+        return `<span class="ai-text">${html}</span>`;
+      }
+      return sanitized;
     }
     if (Array.isArray(value)) {
-      if (value.length === 0) return 'None';
+      if (value.length === 0) return asHtml ? '<span class="ai-empty">None</span>' : 'None';
+      if (asHtml) {
+        const items = value.map((item) => {
+          const line = formatSummary(item, depth + 1, true);
+          return `<li class="ai-list-item">${line}</li>`;
+        }).join('');
+        return `<ul class="ai-list depth-${depth}">${items}</ul>`;
+      }
       return value
-        .map((item, index) => {
-          const line = formatSummary(item, depth + 1);
+        .map((item) => {
+          const line = formatSummary(item, depth + 1, false);
           const bullet = depth === 0 ? '•' : '◦';
-          if (line.includes('\n')) {
-            return `${bullet} ${line.split('\n').join('\n    ')}`;
-          }
           return `${bullet} ${line}`;
         })
         .join('\n');
@@ -234,25 +248,72 @@ const App = () => {
       const excludeKeys = ['success', 'generated_at'];
       const entries = Object.entries(value).filter(([key]) => !excludeKeys.includes(key));
 
-      if (entries.length === 0) return 'No data available.';
+      if (entries.length === 0) return asHtml ? '<p class="ai-empty">No data available.</p>' : 'No data available.';
 
+      if (asHtml) {
+        return entries
+          .map(([key, val]) => {
+            const prettyKey = key.replace(/_/g, ' ');
+            const label = prettyKey.charAt(0).toUpperCase() + prettyKey.slice(1);
+            const formatted = formatSummary(val, depth + 1, true);
+            const icon = getSectionIcon(key);
+
+            if (depth === 0) {
+              return `<div class="ai-section">
+                <div class="ai-section-header">${icon} ${label}</div>
+                <div class="ai-section-content">${formatted}</div>
+              </div>`;
+            }
+            return `<div class="ai-subsection">
+              <span class="ai-label">${label}:</span>
+              <span class="ai-value">${formatted}</span>
+            </div>`;
+          })
+          .join('');
+      }
       return entries
         .map(([key, val]) => {
           const prettyKey = key.replace(/_/g, ' ');
           const label = prettyKey.charAt(0).toUpperCase() + prettyKey.slice(1);
-          const formatted = formatSummary(val, depth + 1);
-
-          // Add section divider for top-level keys
+          const formatted = formatSummary(val, depth + 1, false);
           const sectionHeader = depth === 0 ? `━━━ ${label.toUpperCase()} ━━━` : `📌 ${label}`;
-
-          if (formatted.includes('\n')) {
-            return `${sectionHeader}\n${formatted}`;
-          }
           return depth === 0 ? `${sectionHeader}\n${formatted}` : `${label}: ${formatted}`;
         })
         .join('\n\n');
     }
-    return sanitizeSummaryText(value);
+    const sanitized = sanitizeSummaryText(value);
+    return asHtml ? `<span class="ai-text">${sanitized}</span>` : sanitized;
+  };
+
+  const getSectionIcon = (key) => {
+    const icons = {
+      summary: '📋',
+      tasks: '✅',
+      events: '📅',
+      calendar: '📆',
+      recommendations: '💡',
+      suggestions: '💡',
+      priorities: '🎯',
+      priority: '🎯',
+      deadlines: '⏰',
+      schedule: '🗓️',
+      insights: '🔍',
+      analysis: '📊',
+      tips: '💡',
+      warnings: '⚠️',
+      notes: '📝',
+      reminder: '🔔',
+      reminders: '🔔',
+      upcoming: '📌',
+      completed: '✔️',
+      pending: '⏳',
+      overdue: '🚨',
+      today: '📍',
+      tomorrow: '📆',
+      week: '📅',
+      default: '📌'
+    };
+    return icons[key.toLowerCase()] || icons.default;
   };
 
   useEffect(() => {
@@ -886,7 +947,7 @@ const App = () => {
                           }
                         }
 
-                        output.textContent = formatSummary(formatted);
+                        output.innerHTML = formatSummary(formatted, 0, true);
                         toast.success('AI Insight generated.');
                       } catch (error) {
                         console.error('AI Summary error:', error);
