@@ -419,24 +419,6 @@ html {
   outline: none;
   white-space: wrap;
 }
-.upcoming-events-list::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 60%;
-  background-image: url("./assets/3.png");
-  background-size: contain;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  opacity: 0.2;
-  z-index: 0;
-}
-.upcoming-events-list > * {
-  position: relative;
-  z-index: 1;
-}
 .notes-card input[type="text"] {
   background-color: transparent;
   width: 100%;
@@ -538,8 +520,8 @@ html {
 
 /* Notes */
 textarea {
-  width: 100%;
-  min-height: 140px;
+  width: 70%;
+  min-height: 240px;
   background: transparent;
   border: none;
   font-size: 18px;
@@ -690,7 +672,6 @@ textarea {
   padding: 12px;
   text-align: left;
 }
-
 /* Footer */
 .footer {
   background: #333;
@@ -790,6 +771,11 @@ textarea {
   .upcoming-search {
     flex: 1 1 100%;
   }
+  .notes-card {
+    min-width: 100%;
+    padding: 15px;
+    min-height: 4%;
+  }
   .card {
     padding: 15px;
   }
@@ -851,6 +837,12 @@ textarea {
     width: 40px;
     height: 40px;
   }
+  .notes-card {
+    min-width: 100%;
+    padding: 15px;
+    min-height: 4%;
+  }
+
   .hero {
     padding: 1rem;
   }
