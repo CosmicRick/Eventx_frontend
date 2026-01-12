@@ -665,13 +665,13 @@ const App = () => {
                 </div>
                 <div className="input-row">
                   <FontAwesomeIcon icon={faCalendarCheck} /><span>StartEvent:</span>
-                  <input className="startDate" name="startDate" type="date" style={{ width: '22%' }} />
+                  <input className="startDate" name="startDate" type="date" style={{ width: '25%' }} />
                   <span>StartTime:</span>
                   <input className="startTime" name="startTime" type="time" />
                 </div>
                 <div className="input-row">
                   <FontAwesomeIcon icon={faCalendarCheck} /><span>End Event:</span>
-                  <input className="endDate" name="endDate" type="date" style={{ width: '23%' }} />
+                  <input className="endDate" name="endDate" type="date" style={{ width: '25%' }} />
                   <span>End Time:</span>
                   <input className="endTime" name="endTime" type="time" />
                 </div>
