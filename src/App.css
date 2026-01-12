@@ -263,10 +263,10 @@ html {
   padding: 5px 15px;
 }
 .save-btn {
-  background: black;
+  background: rgb(0, 0, 0);
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 20px 30px;
   margin-right: auto;
   margin-left: auto;
   border-radius: 20px;
