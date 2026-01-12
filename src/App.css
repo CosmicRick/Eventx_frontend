@@ -217,7 +217,7 @@ html {
 .create-event-card::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 40%;
   left: 0;
   width: 100%;
   height: 40%;
@@ -253,7 +253,7 @@ html {
   visibility: hidden;
 }
 .create-event-card input[type="date"],
-.create-event-card input[type="time"]:hover {
+.create-event-card input[type="time"]:focus {
   width: clamp(6rem, 18%, 8rem);
 }
 .startDate::-webkit-calendar-picker-indicator {
