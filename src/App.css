@@ -325,22 +325,8 @@ html {
   padding-top: 5%;
   border-radius: 24px;
 }
-.upcoming-section {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  width: 100%;
-  margin-bottom: 2rem;
-}
 .upcoming-card {
-  width: 50%;
-  min-width: 320px;
-  box-sizing: border-box;
-}
-.upcoming-tasks-card {
-  width: 50%;
-  min-width: 320px;
-  box-sizing: border-box;
+  width: 60%;
 }
 .upcoming-events-list {
   width: 100%;
@@ -422,13 +408,9 @@ html {
   margin: 0;
   width: auto;
 }
-.upcoming-events-list button,
-.upcoming-tasks-list button {
-  width: 1.7rem;
-  height: 1.7rem;
-  min-width: 1.7rem;
-  min-height: 1.7rem;
-  border-radius: 50%;
+.upcoming-events-list button {
+  width: max-content;
+  border-radius: 20px;
   background-color: rgba(243, 175, 67, 0.947);
   border: 1px solid gray;
   color: #3c3939;
@@ -436,23 +418,7 @@ html {
   margin-left: 0 !important;
   margin-top: 0;
   outline: none;
-  white-space: nowrap;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s;
-}
-.upcoming-events-list button::after,
-.upcoming-tasks-list button::after {
-  content: "\2715"; /* Unicode for a small X (✕) */
-  font-size: 1.1rem;
-  color: #c0392b;
-  display: block;
-}
-.upcoming-events-list button span,
-.upcoming-tasks-list button span {
-  display: none;
+  white-space: wrap;
 }
 
 .notes-card input[type="text"] {
@@ -822,16 +788,10 @@ textarea {
   .taskshow {
     min-width: 100%;
   }
-  .upcoming-section {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .upcoming-card,
-  .upcoming-tasks-card {
+  .upcoming-card {
     width: 100%;
-    min-width: unset;
+    height: auto;
     padding: 15px;
-    box-sizing: border-box;
   }
   .upcoming-controls {
     flex-wrap: wrap;
