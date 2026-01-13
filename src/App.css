@@ -507,7 +507,7 @@ html {
 }
 .taskshow button {
   width: max-content;
-  height: 1.5rem;
+  height: 2rem;
   border-radius: 20px;
   background-color: rgba(243, 175, 67, 0.947);
   border: 1px solid gray;
