@@ -325,7 +325,8 @@ html {
   padding-top: 5%;
   border-radius: 24px;
 }
-  width: 48%;
+.upcoming-card {
+  width: 50%;
 }
 .upcoming-events-list {
   max-height: min(65vh, 32rem);
@@ -512,19 +513,15 @@ html {
   font-family: "Squada One", sans-serif;
 }
 .taskshow button {
-  width: 1.54rem;   /* 2.2rem * 0.7 = 1.54rem */
-  height: 1.54rem;  /* 2.2rem * 0.7 = 1.54rem */
-  border-radius: 50%;
+  width: max-content;
+  border-radius: 20px; /* 2.2rem * 0.7 = 1.54rem */
   background-color: rgba(243, 175, 67, 0.947);
   border: 1px solid gray;
-  color: #3c3939;
   float: right;
   margin-left: 0 !important;
   margin-top: 0;
   outline: none;
   white-space: nowrap;
-  font-size: 1rem;
-  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
