@@ -177,8 +177,11 @@ html {
 /* Cards */
 .eventmanegament {
   display: flex;
+  flex-direction: row;
   gap: 2rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .taskshow {
   margin: 0;
