@@ -329,17 +329,17 @@ html {
   width: 60%;
 }
 .upcoming-events-list {
-  max-height: min(65vh, 32rem);
+  width: 100%;
+  max-width: 37.5rem;
   overflow-y: auto;
   font-weight: bold;
   color: #d4d2d2;
   background-color: rgba(0, 0, 0, 0);
-  font-family: "Squada One", sans-serif;
+  font-family: "Google Sans", "Squada One", sans-serif;
   font-weight: 600;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   margin-bottom: 2rem;
-  font-family: "Google Sans", sans-serif;
   min-width: 100%;
 }
 
@@ -513,8 +513,8 @@ html {
   font-family: "Squada One", sans-serif;
 }
 .taskshow button {
-  width: 1.54rem;   /* 2.2rem * 0.7 = 1.54rem */
-  height: 1.54rem;  /* 2.2rem * 0.7 = 1.54rem */
+  width: 1.54rem; /* 2.2rem * 0.7 = 1.54rem */
+  height: 1.54rem; /* 2.2rem * 0.7 = 1.54rem */
   border-radius: 50%;
   background-color: rgba(243, 175, 67, 0.947);
   border: 1px solid gray;
