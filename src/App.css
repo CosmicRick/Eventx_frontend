@@ -336,6 +336,7 @@ html {
   -ms-overflow-style: none; /* IE and Edge */
   margin-bottom: 2rem;
   font-family: "Google Sans", sans-serif;
+  min-width:60%;
 }
 
 /* Hide scrollbar for upcoming events */
@@ -501,7 +502,7 @@ html {
   color: #4a4a49;
 }
 .taskshow button{
-  padding: 1%;
+  padding: 5%;
 }
 ::-webkit-scrollbar {
   display: none;
