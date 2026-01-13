@@ -435,7 +435,7 @@ html {
   font-weight: bold;
 }
 .notes-card .input-row {
-  width: 70%;
+  width: 100%;
   border-bottom: 1px solid rgba(71, 71, 71, 0.659);
   margin-bottom: 10px;
   font-family: "Lato", sans-serif;
