@@ -253,11 +253,11 @@ html {
 }
 
 .create-event-card input[type="date"] {
-  width: clamp(8.5rem, 21%, 12.5rem);
+  width: clamp(7.5rem, 15%, 12.5rem);
   color: #030303;
 }
 .create-event-card input[type="time"] {
-  width: clamp(6.5rem, 15%, 9.5rem);
+  width: clamp(7.5rem, 15%, 9.5rem);
   color: #000000;
 }
 .startDate::-webkit-calendar-picker-indicator {
