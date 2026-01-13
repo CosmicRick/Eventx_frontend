@@ -475,7 +475,7 @@ html {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: 40%;
   height: 60%; /* Only 60% of the card height from the bottom */
   background-image: url("./assets/2.png");
   background-size: contain;
@@ -489,7 +489,7 @@ html {
   position: relative;
   z-index: 1;
   min-height: 25rem;
-  width: 100%;
+  width: 40%;
   max-width: 32rem;
   font-size: large;
   font-family: "Squada One", sans-serif;
@@ -502,7 +502,16 @@ html {
   color: #4a4a49;
 }
 .taskshow button{
-  padding: 5%;
+  width: max-content;
+  border-radius: 20px;
+  background-color: rgba(243, 175, 67, 0.947);
+  border: 1px solid gray;
+  color: #3c3939;
+  float: right;
+  margin-left: 0 !important;
+  margin-top: 0;
+  outline: none;
+  white-space: wrap;
 }
 ::-webkit-scrollbar {
   display: none;
