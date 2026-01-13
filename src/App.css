@@ -325,8 +325,7 @@ html {
   padding-top: 5%;
   border-radius: 24px;
 }
-.upcoming-card {
-  width: 60%;
+  width: 48%;
 }
 .upcoming-events-list {
   max-height: min(65vh, 32rem);
