@@ -506,7 +506,8 @@ html {
   color: #1f2937c1;
 }
 .taskshow button {
-  width: 2rem;
+  width: max-content;
+  height: 1.5rem;
   border-radius: 20px;
   background-color: rgba(243, 175, 67, 0.947);
   border: 1px solid gray;
@@ -814,7 +815,7 @@ textarea {
     padding: 8px 0;
   }
   .Services {
-    margin-left: 0;
+    display: none;
   }
   .socials {
     margin-left: 0;
@@ -822,6 +823,7 @@ textarea {
   .contact-info ol ul {
     padding-left: 0;
     justify-content: center;
+    display: none;
   }
   .footer-links {
     flex-wrap: wrap;
