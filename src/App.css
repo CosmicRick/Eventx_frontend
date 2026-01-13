@@ -315,6 +315,8 @@ html {
   display: grid;
   grid-template-rows: auto 1fr;
 }
+
+
 .clock-section iframe {
   width: 100%;
   text-align: center;
