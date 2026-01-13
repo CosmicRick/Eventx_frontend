@@ -505,10 +505,17 @@ html {
   flex-direction: column;
   color: #1f2937c1;
 }
+.taskshow {
+  margin: 0;
+  flex: 1 1 60%;
+  max-width: 50%;
+  overflow: visible;
+  font-family: "Squada One", sans-serif;
+}
 .taskshow button {
-  width: 0.5%;
-  height: 2.5rem;
-  border-radius: 20px;
+  width: 1.54rem;   /* 2.2rem * 0.7 = 1.54rem */
+  height: 1.54rem;  /* 2.2rem * 0.7 = 1.54rem */
+  border-radius: 50%;
   background-color: rgba(243, 175, 67, 0.947);
   border: 1px solid gray;
   color: #3c3939;
@@ -516,7 +523,12 @@ html {
   margin-left: 0 !important;
   margin-top: 0;
   outline: none;
-  white-space: wrap;
+  white-space: nowrap;
+  font-size: 1rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 ::-webkit-scrollbar {
   display: none;
