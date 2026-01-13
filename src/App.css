@@ -332,6 +332,7 @@ html {
   max-height: min(65vh, 32rem);
   overflow-y: auto;
   font-weight: bold;
+  width: 70%;
   color: #d4d2d2;
   background-color: rgba(0, 0, 0, 0);
   font-family: "Squada One", sans-serif;
