@@ -316,7 +316,6 @@ html {
   grid-template-rows: auto 1fr;
 }
 
-
 .clock-section iframe {
   width: 100%;
   text-align: center;
@@ -326,7 +325,7 @@ html {
   padding-top: 5%;
   border-radius: 24px;
 }
-.upcoming-card{
+.upcoming-card {
   width: 60%;
 }
 .upcoming-events-list {
@@ -341,7 +340,7 @@ html {
   -ms-overflow-style: none; /* IE and Edge */
   margin-bottom: 2rem;
   font-family: "Google Sans", sans-serif;
-  min-width:100%;
+  min-width: 100%;
 }
 
 /* Hide scrollbar for upcoming events */
@@ -504,10 +503,10 @@ html {
   padding: 25px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   flex-direction: column;
-  color: #4a4a49;
+  color: #1f2937c1;
 }
-.taskshow button{
-  width: max-content;
+.taskshow button {
+  width: 2rem;
   border-radius: 20px;
   background-color: rgba(243, 175, 67, 0.947);
   border: 1px solid gray;
@@ -777,8 +776,8 @@ textarea {
     min-width: 100%;
   }
   .upcoming-card {
-    max-width: 100%;
-    min-height: auto;
+    width: 100%;
+    height: auto;
     padding: 15px;
   }
   .upcoming-controls {
