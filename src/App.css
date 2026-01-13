@@ -506,7 +506,7 @@ html {
   color: #1f2937c1;
 }
 .taskshow button {
-  width: max-content;
+  width: 0.5%;
   height: 2.5rem;
   border-radius: 20px;
   background-color: rgba(243, 175, 67, 0.947);
